@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+*{
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    --bg:rgb(219, 219, 219);
+}
+body{
+    background-image: linear-gradient(to right ,rgb(3, 3, 146),rgb(88, 0, 110));
+}
+.gameContainer{
+    width: 450px;
+    height: 450px;
+    background-color: white;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 5px;
+    position: relative;
+}
+.threeDotLol{
+    position: relative;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.threeDotLol div{
+    width: 15px;
+    height: 15px;
+    background-color: blue;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+.threeDotLol div:nth-child(1){
+    background-color: rgb(255, 81, 0);
+}
+.threeDotLol div:nth-child(2){
+    background-color: rgb(132, 0, 255);
+}
+.threeDotLol div:nth-child(3){
+    background-color: rgb(0, 38, 255);
+}
+.gamePlace{
+    position: relative;
+    top: 20px;
+    height: 90%;
+    width: 100%;
+    background-color: var(--bg);
+    overflow: hidden;
+}
+.titleGame{
+    position: relative;
+    margin: auto;
+    top: 15px;
+    width: 160px;
+}
+#Start{
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 310px;
+    background-color: var(--bg);
+    z-index: 3;
+}
+#Start button{
+    position: absolute;
+    top: 55%;
+    left: 39%;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(21, 173, 80);
+    font-weight: 800;
+    cursor: pointer;
+}
+#Start button:hover{
+    background-color: rgb(23, 156, 74);
+}
+.theGameGo{
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 310px;
+    background-color: var(--bg);
+    z-index: 2;
+}
+.gamePlace h4{
+    position: relative;
+    top: 30px;
+    left: 90px;
+}
+#Start li{
+    position: relative;
+    top: 40px;
+    left: 50px;
+    font-size: 13px;
+}
+.inputs{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom:50px;
+}
+.inputs button:nth-child(1){
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(21, 173, 80);
+    font-weight: 800;
+    cursor: pointer;
+}
+.inputs button:nth-child(1):hover{
+    background-color: rgb(23, 156, 74);
+}
+.dottandansw{
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+}
+.dottandansw div:nth-child(1){
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 5px;
+    margin: auto;
+}
+#ansew{
+    position: relative;
+    left: 80px;
+    top: 10px;
+    display: none;
+}
+#ansew li{
+    list-style: none;
+    margin-top: 10px;
+    width: 300px;
+    height: 25px;
+    background-color: rgba(255, 99, 71, 0.452);
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 15px;
+}

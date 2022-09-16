@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="init()">
+    <div class="lodingforhome" id="lodingforhome">
+        <div class="titlefoorloadingontainerr">
+            <span>Games.</span><span>remin</span><span>.tk</span>
+        </div>
+        <div class="lodingcontent01">
+        <div class="lodingcontent"></div>
+        <div class="lodingcontent"></div>
+        <div class="lodingcontent"></div>
+        </div>
+        <style>
+            #lodingforhome{
+               position: absolute;
+               top: 0;
+               bottom: 0;
+               width: 100%;
+               background-color: white;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               flex-direction: column;
+               z-index: 1000;
+            }.lodingcontent{
+               width: 35px;
+               height: 35px;
+               border-radius: 20%;
+               border-top: 2px solid red;
+               border-left: 2px solid black;
+               border-right: 2px solid black;
+               border-bottom: 2px solid red;
+               animation: lodingforhome 1.5s ease-in-out infinite;
+            }@keyframes lodingforhome {
+               0%{transform: rotate(45deg);}
+               100%{transform: rotate(405deg);}
+            }.lodingcontent01{
+               display: flex;
+               flex-direction: row;
+            }.titlefoorloadingontainerr{
+               font-size: 25px;
+               font-weight: 900;
+               color: black;
+            }.titlefoorloadingontainerr span:nth-child(2){
+               color: red;
+            }
+        </style>
+    </div>
+    <div class="gameContainer">
+        <div class="threeDotLol"><div></div><div></div><div></div></div>
+        <div class="gamePlace">
+            <h3 class="titleGame">Reflex game</h3>
+            <h4>Lets check your response time !</h4>
+            <div id="Start">
+                <li>Click "Start"</li>
+                <li>When the "Black" dot turn "Red" quickly click done</li>
+                <button onclick="start()">Start ></button>
+            </div>
+            <div class="theGameGo">
+            <div class="dottandansw">
+                <div id="dot"></div>
+                <div id="ansew">
+                    <li id="remark"> Good job</li>
+                    <li id="responsetime"></li>
+                </div>
+            </div>
+            <div class="inputs">
+                <button onclick="answer()" id="tappp">Tap !</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script>
+         var colorchanged = false;
+         var tapped = false;
+        function remark(responseTime){
+            var responseString="";
+            if (responseTime < 0.20)
+                responseString="Well done!";
+            if (responseTime <= 0.30 && responseTime > 0.20)
+                responseString="Nice!";
+            if (responseTime <=0.40 && responseTime > 0.30)
+                responseString="Could be better...";
+            if (responseTime <=0.50 && responseTime > 0.60)
+                responseString="Keep practicing!";
+            if (responseTime <=0.60 && responseTime > 1)
+                responseString="Have you been drinking?";
+            if (responseTime >=1)
+                responseString="Did you fall asleep?";
+            return responseString;
+        }
+        var starttime;
+        function start(){
+            var random_bg_home =  Math.floor(Math.random() * 2000);
+           var doc = document.getElementById("Start");
+           doc.style.display = "none";
+           timerID=setTimeout('startTest()', random_bg_home+2500);
+        }
+        function startTest(){
+            var doc =  document.getElementById("dot");
+            doc.style.backgroundColor = "red";
+            colorchanged = true;
+            starttime =new Date();
+        }
+        function answer(){
+            var endTime =new Date();
+            if(tapped){
+                var doc =  document.getElementById("dot");
+                doc.style.backgroundColor = "black";
+                document.getElementById("ansew").style.display = "none";
+                start();
+            }
+            if(colorchanged){
+                var responseTime = (endTime.getTime()-starttime.getTime())/1000;
+                document.getElementById("responsetime").innerHTML = " Response time : "+ responseTime + " s";
+                document.getElementById("ansew").style.display = "initial";
+                document.getElementById("remark").innerHTML = remark(responseTime);
+                console.log(remark(responseTime));
+                tapped = true;
+                document.getElementById("tappp").innerHTML = "Replay >";
+                colorchanged = false;
+            }
+        }
+    </script>
+<script src="loding.js"></script>
+</body>
+</html>
