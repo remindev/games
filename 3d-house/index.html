@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-QP3WCWNF58"></script>
+      <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-QP3WCWNF58');
+      </script>
+
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>first 3D</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="bodycenter">
+      <div id="inputcontainer0">
+            <span>Y Axis</span>
+            <input type="range" min="0" max="360" value="0" id="slider">
+            <div id="sellll">
+            <div id="selector">
+                  <div class="selectbtn"></div>
+            </div>
+            </div>
+      </div>
+      <div id="inputcontainer1">
+            <span>X Axis</span>
+            <input type="range" min="0" max="160" value="0" id="slider1">
+            <div id="sellll1">
+                  <div id="selector1">
+                        <div class="selectbtn1"></div>
+                  </div>
+            </div>
+      </div>
+      <div id="inputcontainer2">
+            <span>perspective</span>
+            <input type="range" min="200" max="1200" value="0" id="slider2">
+            <div id="sellll2">
+                  <div id="selector2">
+                        <div class="selectbtn2"></div>
+                  </div>
+            </div>
+      </div>
+      <div id="flex">
+      <div id="center001">
+      <div id="center">
+            <div id="floor"></div>
+            <div id="bottomarea"></div>
+            <div id="cube">
+                  <div id="top0"></div>
+                  <div id="top"></div>
+                  <div id="bottom">
+                        <div id="ball"></div>
+                  </div>
+                  <div id="left">
+                        <div id="airhole0"></div>
+                        <div id="fadj0"></div>
+                        <div id="fadj1"></div>
+                        <div id="doorfr"></div>
+                        <div id="dorfx"></div>
+                        <div id="door"></div>
+                  </div>
+                  <div id="right"></div>
+                  <div id="right0">
+                        <div id="airhole1"></div>
+                  </div>
+                  <div id="front"></div>
+                  <div id="front0"></div>
+                  <div id="back"></div>
+                  <div id="back0"></div>
+                  <div id="topfloar0"></div>
+                  <div id="topfloar1"></div>
+            </div>
+      </div>
+      </div>
+      </div>
+      <div id="footer01">
+            <span id="by_by"> created by <a target="_blank" href="https://jmqjwk8v18d3tzhrczy4cg-on.drv.tw/www.IGlink.com/">Remin</a></span>
+            <div id="sourcedrop">
+                  <div id="sourcedropclickcontainer">
+                  <div id="sourcedropclick" onclick="dropup()">
+                  <div id="clicksolve">
+                  </div>
+                  <span id="source">Source Code</span>
+                  <img id="ico" src="img/expand black.svg">
+                  </div>
+
+                       
+
+                  </div>
+            </div>
+      </div>
+            <script>
+                function dropup(){
+                      document.getElementById("sourcedropclickcontainer").classList.toggle("active")
+                      document.getElementById("ico").classList.toggle("active")
+                }
+            </script>
+            <script>
+                  var slider = document.getElementById("slider");
+                  var selector = document.getElementById("selector");
+                  var slider3 = document.getElementById("slider");
+                  slider3.oninput=function(){
+                        console.log(slider3.value)
+                  }
+                  slider.oninput = function () {
+                  selector.style.left = this.value / 3.6 + "%";
+                        
+                  document.getElementById("center").style.transform = "rotateY("+ this.value+"deg)";
+                  }
+            </script>
+            <script>
+                  var slider0 = document.getElementById("slider1");
+                  var selector0 = document.getElementById("selector1");
+                  
+                  slider0.oninput = function () {
+                  selector0.style.left = this.value/1.6+ "%";
+                  
+
+                  document.getElementById("center001").style.transform = "rotateX(" + -this.value + "deg)";
+                  }
+            </script>
+            <script>
+                  var slider1 = document.getElementById("slider2");
+                  var selector1 = document.getElementById("selector2");
+
+                  slider1.oninput = function () {
+                  selector1.style.left = this.value / 10-20 + "%";
+                  var val = this.value;
+                  document.getElementById("flex").style.perspective = val+"px";
+                  }
+            </script>
+</body>
+
+</html>
