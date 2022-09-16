@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" id="htmll" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="no_reload0">
+  <div id="no_reload">
+    <div class="center_container">
+        <div class="head_top">
+          <span class="name_logo_txt_home_pro" style="cursor: pointer;" onclick="home()"> 
+            <img src="res/03.png"> 
+            Puzzle
+         </span>
+         <div id="name_logo_txt_home_pro_img_theme_container">
+            <img id="name_logo_txt_home_pro_img_theme0" onclick="theme_toggle()" src="res/04.png">
+            <img id="name_logo_txt_home_pro_img_theme1" onclick="theme_toggle()" src="res/06.png">
+         </div>
+          <span class="level_name_leverl_game">Level 0</span>
+        </div>
+        <div id="content_container">
+            <div id="content_container01">
+                <ul id="qustion_ul">
+                    <li style="margin-bottom: 25px;">Type the word "puzzle" accordingly!</li>
+                    <li id="puuzzle_way_01010101">1 = <img src="res/01.png"></li>
+                    <li>101001</li>
+                </ul>
+                <div id="answer_submit_div">
+                    <div id="answer_submit_div_text_input">
+                        <input type="text" 
+                               autocomplete="off" 
+                               placeholder="#Type your answer" 
+                               name="lol" 
+                               
+                               id="input_at_answer_submit_div">
+                        <button id="input_at_answer_submit_div_buttion_submit" onclick="check_the_answer()">/Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div id="content_container02">
+
+            </div>
+        </div>
+    </div>
+    <div id="footer01">
+        <span id="by_by">created by <a target="_blank" href="/">Me</a></span>
+    </div>
+  </div>
+  <script src="java.js"></script>
+</body>
+</html>
